@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aelexa Home Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <!-- Flowbite -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.css" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link href="https://unpkg.com/lucide-static@0.321.0/font/lucide.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- NAVBAR -->
+  <nav class="bg-blue-700 text-white px-6 py-4 flex justify-between">
+    <h1 class="text-xl font-bold">Aelexa Home Care</h1>
+    <span class="text-sm">Client Management</span>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <div class="max-w-6xl mx-auto p-6">
+
+    <!-- ADD / UPDATE CLIENT FORM -->
+    <div class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-lg font-semibold mb-4">Add / Update Client</h2>
+
+      <form id="clientForm" class="grid grid-cols-1 md:grid-cols-5 gap-4">
+
+        <input id="name" type="text" value="riya" placeholder="Client Name" class="border p-2 rounded" required>
+        <input id="age" type="number" placeholder="Age" value="35" class="border p-2 rounded" required>
+        <input id="condition" type="text" value="BP" placeholder="Medical Condition" class="border p-2 rounded" required>
+        <input id="caregiver" type="text" value="john" placeholder="Caregiver Name" class="border p-2 rounded" required>
+        <input id="contact" type="text" value="814140067" placeholder="Contact Number" class="border p-2 rounded" required>
+
+        <button id="submitBtn" type="submit"
+          class="md:col-span-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+          Save Client
+        </button>
+
+      </form>
+    </div>
+
+    <!-- CLIENT TABLE -->
+    <div class="bg-white p-6 rounded-lg shadow">
+
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Client List</h2>
+
+        <div class="flex items-center text-gray-800 gap-2">
+          <span class="h-2.5 w-2.5 bg-green-500 rounded-full"></span>
+          <span id="checkedInCount">0</span> Currently Checked In
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border text-sm">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="border p-2">Name</th>
+              <th class="border p-2">Age</th>
+              <th class="border p-2">Condition</th>
+              <th class="border p-2">Caregiver</th>
+              <th class="border p-2">Phone</th>
+              <th class="border p-2 text-center">Visit</th>
+              <th class="border p-2 text-center">Actions</th>
+            </tr>
+          </thead>
+
+          <!-- ONLY ONE TBODY -->
+          <tbody id="clientTableBody"></tbody>
+
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Flowbite JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
 
