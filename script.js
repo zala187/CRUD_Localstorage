@@ -130,20 +130,16 @@ function setVisitStatus(index, status) {
 
 function editClient(index) {
   const clients = JSON.parse(localStorage.getItem("clients")) || [];
-
-  // 1️⃣ Selected client
   const client = clients[index];
 
-  // 2️⃣ Form me values set
-  name.value = client.name;
-  age.value = client.age;
-  condition.value = client.condition;
-  caregiver.value = client.caregiver;
-  contact.value = client.contact;
+  document.getElementById("name").value = client.name;
+  document.getElementById("age").value = client.age;
+  document.getElementById("condition").value = client.condition;
+  document.getElementById("caregiver").value = client.caregiver;
+  document.getElementById("contact").value = client.contact;
 
-  // 3️⃣ Remember index
   editIndex = index;
 
-  // 4️⃣ Button text change
   document.getElementById("submitBtn").textContent = "Update Client";
 }
+
